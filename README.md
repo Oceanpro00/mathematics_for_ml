@@ -1,4 +1,4 @@
-# Vector Math Visualizer (Mathematics for Machine Learning Exercises)
+# Mathematics for Machine Learning Exercises
 
 ## Table of Contents
 
