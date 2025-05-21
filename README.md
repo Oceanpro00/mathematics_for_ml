@@ -84,40 +84,63 @@ Vectors also play a foundational role in machine learning. They’re used to rep
 
 ## Dot Product Trial
 
-This notebook demonstrates how the **dot product** relates to vector size, angle, and directional similarity.
+This notebook demonstrates how the **dot product** relates to vector size, angle, and directional similarity, and includes scalar and vector projections.
 
 ### Features
 
-* Generates two random n-dimensional vectors
+* Generates two random n-dimensional vectors (or allows custom input)
 * Calculates the dot product and magnitudes
 * Uses the cosine formula:
   **a · b = |a| × |b| × cos(θ)**
 * Interprets whether vectors point in the **same**, **opposite**, or **orthogonal** directions
+* Calculates:
+
+  * Scalar projection of one vector onto another
+  * Vector projection of one vector onto another
 * Reinforces geometric understanding through printed explanations
 
 ### Sample Output
 
 ```
 Vector 1 looks like:
-[-28.78, 3.30, -0.91, 0.87, 4.23]
-has a magnitude of 858.80
+[4, 3]
+and has a magnitude of 5.0
 
 Vector 2 looks like:
-[-49.88, -28.37, -9.79, -41.04, 42.98]
-has a magnitude of 6920.92
+[1, 2]
+and has a magnitude of 2.2361
 
-The Dot product of vectors 1 and 2 is 1497.082, which means that the vectors point in a similar direction
+DOT PRODUCT RESULT:
+The Dot product of vectors 1 and 2 is 10, which means that the vectors point in a similar direction
 
+COSINE FORMULA BREAKDOWN
 Comparing to the cosine formula:
 vector1 · vector2 = |v1| * |v2| * cos(θ)
-1497.082 = 858.7994 * 6920.9244 * 0.0003
-1497.082 = 1497.082
+10 = 5.0 * 2.2361 * 0.8944
+10 = 10.0
 
-To put it simply:
-• If θ = 0°, then cos(θ) = 1 → vectors point in the same direction  
-• If θ = 90°, then cos(θ) = 0 → vectors are perpendicular (dot product = 0)  
-• If θ = 180°, then cos(θ) = -1 → vectors point in opposite directions  
-→ The dot product combines vector sizes and the cosine of their angle.
+GEOMETRIC INTERPRETATION OF COS(θ)
+To put Simply, this tells us:
+• If θ = 0°, then cos(θ) = 1 → vectors point in the same direction.
+• If θ = 90°, then cos(θ) = 0 → vectors are perpendicular (dot product = 0).
+• If θ = 180°, then cos(θ) = -1 → vectors point in opposite directions.
+→ The dot product combines the size of both vectors and the cosine of the angle between them.
+
+SCALAR PROJECTION OF VECTOR 1 ONTO VECTOR 2
+The Scalar Projection of Vector 1 onto Vector 2 is 4.4721
+→ This is the length of the 'shadow' cast by Vector 1 onto Vector 2.
+
+SCALAR PROJECTION OF VECTOR 2 ONTO VECTOR 1
+The Scalar Projection of Vector 2 onto Vector 1 is 2.0
+→ This is the length of the 'shadow' cast by Vector 2 onto Vector 1.
+
+VECTOR PROJECTION OF VECTOR 1 ONTO VECTOR 2
+The Vector Projection of Vector 1 onto Vector 2 is [2.0, 4.0]
+→ This is the vector that shows how much of Vector 1 lies *along* Vector 2.
+
+VECTOR PROJECTION OF VECTOR 2 ONTO VECTOR 1
+The Vector Projection of Vector 2 onto Vector 1 is [1.6, 1.2]
+→ This is the vector that shows how much of Vector 2 lies *along* Vector 1.
 ```
 
 ### Notebook Location
@@ -126,26 +149,19 @@ To put it simply:
 Subjects/vector_math/dot_product_trial.ipynb
 ```
 
-**screenshot:**
-
-To visually show output, you may include:
-
-```markdown
-![Dot Product Output](assets/dot_product_output_example.png)
-```
-
 ---
 
 ## Dot Product – Key Concepts
 
 * The dot product measures how aligned two vectors are
 * Cosine rule: **a · b = |a||b|cos(θ)**
+* Scalar projection = how far one vector stretches onto another
+* Vector projection = a scaled version of the second vector in the direction of the first
 * Interpretation:
 
   * Positive → same direction
   * Zero → perpendicular
   * Negative → opposite direction
-* Dot product scales with vector magnitudes and the cosine of the angle between them
 
 ---
 
@@ -163,6 +179,7 @@ Understanding dot products is essential for both geometry and machine learning:
 
   * Projection of one vector onto another
   * Understanding gradients, angles, and alignment in high-dimensional spaces
+  * Reducing dimensions or extracting directional components from vectors
 
 ---
 
@@ -171,13 +188,12 @@ Understanding dot products is essential for both geometry and machine learning:
 ```
 Subjects/
 └── vector_math/
-    ├── vector_math.ipynb       # Vector operations visualization
-    └── dot_product_trial.ipynb       # Dot Product Calculator
+    ├── vector_math.ipynb            # Vector operations visualization
+    └── dot_product_trial.ipynb      # Dot product + projection calculator and explanation
 assets/
-├── vector_plot_example.png         # Ordered vector plot
-├── vector_plot_commutative.png     # Shuffled vector plot (commutativity)
-└── dot_product_output_example.png  # printed output screenshot for dot product
-README.md                           # This file
+├── vector_plot_example.png          # Ordered vector plot
+└── vector_plot_commutative.png      # Shuffled vector plot (commutativity)
+README.md                            # This file
 ```
 
 ---
