@@ -100,68 +100,77 @@ Vectors also play a foundational role in machine learning. They’re used to rep
 
 ## Dot Product Trial
 
-This notebook demonstrates how the **dot product** relates to vector size, angle, and directional similarity, and includes scalar and vector projections.
+This notebook demonstrates how the **dot product** reveals directional relationships between two vectors, and expands into **scalar** and **vector projections** with clear explanations and step-by-step calculations.
 
 ### Features
 
-* Generates two random n-dimensional vectors (or allows custom input)
-* Calculates the dot product and magnitudes
-* Uses the cosine formula:
-  **a · b = |a| × |b| × cos(θ)**
-* Interprets whether vectors point in the **same**, **opposite**, or **orthogonal** directions
-* Calculates:
+* Generate or manually input two n-dimensional vectors
+* Calculate:
 
-  * Scalar projection of one vector onto another
-  * Vector projection of one vector onto another
-* Reinforces geometric understanding through printed explanations
+  * Magnitudes (vector size)
+  * Dot product
+  * Cosine of the angle between vectors
+  * Scalar projections
+  * Vector projections
+* Understand results through clean breakdowns:
+
+  * Pythagorean theorem for magnitude
+  * Cosine formula for dot product
+  * Projection formulas and geometric interpretations
 
 ### Sample Output
 
-```
+```console
 Vector 1 looks like:
-[4, 3]
-and has a magnitude of 5.0
+[3, -4, 0]
+and has a magnitude/ size of 5.0
 
 Vector 2 looks like:
-[1, 2]
-and has a magnitude of 2.2361
+[10, 5, -6]
+and has a magnitude/ size of 12.2474
+
+MAGNITUDE BREAKDOWN
+→ |v₁| = √(3² + -4² + 0²) = √(25) = 5.0
 
 DOT PRODUCT RESULT:
-The Dot product of vectors 1 and 2 is 10, which means that the vectors point in a similar direction
+The Dot product of vectors 1 and 2 is -10.0, which means that the vectors point in opposite directions
 
 COSINE FORMULA BREAKDOWN
-Comparing to the cosine formula:
-vector1 · vector2 = |v1| * |v2| * cos(θ)
-10 = 5.0 * 2.2361 * 0.8944
-10 = 10.0
+vector1 · vector2 = |v1| × |v2| × cos(θ)
+-10.0 = 5.0 × 12.2474 × -0.1633
+-10.0 = -10.0
 
 GEOMETRIC INTERPRETATION OF COS(θ)
-To put Simply, this tells us:
-• If θ = 0°, then cos(θ) = 1 → vectors point in the same direction.
-• If θ = 90°, then cos(θ) = 0 → vectors are perpendicular (dot product = 0).
-• If θ = 180°, then cos(θ) = -1 → vectors point in opposite directions.
-→ The dot product combines the size of both vectors and the cosine of the angle between them.
+To put simply, this tells us:
+- If θ = 0°, then cos(θ) = 1 → vectors point in the same direction
+- If θ = 90°, then cos(θ) = 0 → vectors are perpendicular
+- If θ = 180°, then cos(θ) = -1 → vectors point in opposite directions
+→ The dot product combines the size of both vectors and the cosine of the angle between them
 
 SCALAR PROJECTION OF VECTOR 1 ONTO VECTOR 2
-The Scalar Projection of Vector 1 onto Vector 2 is 4.4721
-→ This is the length of the 'shadow' cast by Vector 1 onto Vector 2.
+The Scalar Projection of Vector 1 onto Vector 2 is -1.6329
+→ This is the length of the 'shadow' cast by Vector 1 onto Vector 2
 
-SCALAR PROJECTION OF VECTOR 2 ONTO VECTOR 1
-The Scalar Projection of Vector 2 onto Vector 1 is 2.0
-→ This is the length of the 'shadow' cast by Vector 2 onto Vector 1.
+SCALAR PROJECTION FORMULA
+Let:
+  a = Vector 1
+  b = Vector 2
+scalar_proj = (a · b) / |b|
 
 VECTOR PROJECTION OF VECTOR 1 ONTO VECTOR 2
-The Vector Projection of Vector 1 onto Vector 2 is [2.0, 4.0]
-→ This is the vector that shows how much of Vector 1 lies *along* Vector 2.
+The Vector Projection of Vector 1 onto Vector 2 is [-1.3322, -0.6661, 0.7993]
+→ This is the vector that shows how much of Vector 1 lies *along* Vector 2
 
-VECTOR PROJECTION OF VECTOR 2 ONTO VECTOR 1
-The Vector Projection of Vector 2 onto Vector 1 is [1.6, 1.2]
-→ This is the vector that shows how much of Vector 2 lies *along* Vector 1.
+VECTOR PROJECTION FORMULA
+Let:
+  a = Vector 1
+  b = Vector 2
+vector_proj = [(a · b) / (b · b)] × b
 ```
 
 ### Notebook Location
 
-```
+```bash
 Subjects/vector_math/dot_product_trial.ipynb
 ```
 
@@ -171,8 +180,8 @@ Subjects/vector_math/dot_product_trial.ipynb
 
 * The dot product measures how aligned two vectors are
 * Cosine rule: **a · b = |a||b|cos(θ)**
-* Scalar projection = how far one vector stretches onto another
-* Vector projection = a scaled version of the second vector in the direction of the first
+* Scalar projection = the length of one vector "shadowed" onto another
+* Vector projection = the actual directional vector formed from this shadow
 * Interpretation:
 
   * Positive → same direction
@@ -188,14 +197,14 @@ Understanding dot products is essential for both geometry and machine learning:
 * It tells us **how much two vectors "agree" in direction**
 * Cosine similarity (based on dot product) is used in:
 
-  * Text similarity (natural language processing)
+  * Natural language processing (text similarity)
   * Recommender systems
-  * Image comparison and embedding alignment
-* Helps with:
+  * Image embedding comparisons
+* Projections help:
 
-  * Projection of one vector onto another
-  * Understanding gradients, angles, and alignment in high-dimensional spaces
-  * Reducing dimensions or extracting directional components from vectors
+  * Understand how much of one vector points in the direction of another
+  * Analyze directional components in high-dimensional space
+  * Support dimensionality reduction and optimization logic in ML
 
 ---
 
