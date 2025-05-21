@@ -24,36 +24,52 @@ Each notebook is meant to serve as a standalone explanation of a concept I find 
 
 ## Vector Math Visualization
 
-This notebook explores **vector addition**, **subtraction**, and **scalar multiplication** using a plotting approach in Python with `matplotlib`. It includes an interactive section where vectors are appended to a list and visualized using a custom function.
+This notebook explores **vector addition**, **subtraction**, and **scalar multiplication** using a plotting approach in Python with `matplotlib`. It includes an interactive section where you can:
 
-In addition to scalar multiplication and directional plotting, the notebook demonstrates the **commutative property** of vector addition by shuffling the order of vectors and showing that the final position remains unchanged.
+* Manually input vector components
+* Choose a scalar multiplier
+* Toggle between **addition** and **subtraction** mode
+* Visualize chained vector movement from origin
+* Shuffle vectors to test the **commutative property**
+* Track each run in a persistent history log
 
-The plot shows how vectors:
+Each plot displays cumulative vector movement using tip-to-tail logic. The final endpoint is marked and printed, showing the total displacement.
 
-* Chain tip-to-tail
-* Change length with scaling
-* Reverse direction with subtraction or negative scalars
-* Accumulate position
+### Sample Output
 
-**Original Order Plot:**
+```console
+ VECTOR ADDITION HISTORY
+Addition #1 - Ordered Vector Addition (Mode: subtract, Repeats: 4)
+                Each vector added: [2, 2]
+Addition #2 - Ordered Vector Addition (Mode: add, Repeats: 2)
+                Each vector added: [-3, 1]
+Addition #3 - Ordered Vector Addition (Mode: add, Repeats: 5)
+                Each vector added: [0, -1]
+
+ FINAL VECTOR POSITION IS
+The net deplacement vector position is [-14, -11]
+
+ SHUFFLED VECTOR ADDITION (COMMUTATIVITY CHECK)
+The vectors are the same but appear in a random order.
+Notice that the endpoint remains the same, demonstrating commutativity.
+
+ FINAL VECTOR POSITION IS
+The net deplacement vector position is [-14, -11]
+```
+
+### Original Order Plot:
 
 ![Ordered Vector Plot](assets/vector_plot_example.png)
 
-**Shuffled Order Plot (Commutativity Check):**
+### Shuffled Order Plot (Commutativity Check):
 
 ![Shuffled Vector Plot](assets/vector_plot_commutative.png)
 
-Notebook location:
+### Notebook Location
 
 ```bash
 Subjects/vector_math/vector_math.ipynb
 ```
-
-Key additions in this version:
-
-* A function to build and visualize vectors step-by-step
-* Scalar multiplication applied through repetition
-* Comparison of ordered vs. shuffled vectors to confirm commutativity
 
 ---
 
