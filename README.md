@@ -1,11 +1,14 @@
-# Mathematics for Machine Learning Exercises
+# Vector Math Visualizer (Mathematics for Machine Learning Exercises)
 
 ## Table of Contents
 
 * [Project Overview](#project-overview)
 * [Vector Math Visualization](#vector-math-visualization)
-* [Vector Math – Key Concepts](#vector-math--key-concepts)
-* [Vector Math – Why This Is Useful](#vector-math--why-this-is-useful)
+    * [Vector Math – Key Concepts](#vector-math--key-concepts)
+    * [Vector Math – Why This Is Useful](#vector-math--why-this-is-useful)
+* [Dot Product Trial](#dot-product-trial)
+  * [Dot Product – Key Concepts](#dot-product--key-concepts)
+  * [Dot Product – Why This Is Useful](#dot-product--why-this-is-useful)
 * [Repository Structure](#repository-structure)
 * [Credits](#credits)
 
@@ -79,15 +82,101 @@ Vectors also play a foundational role in machine learning. They’re used to rep
 
 ---
 
+## Dot Product Trial
+
+This notebook demonstrates how the **dot product** relates to vector size, angle, and directional similarity.
+
+### Features
+
+* Generates two random n-dimensional vectors
+* Calculates the dot product and magnitudes
+* Uses the cosine formula:
+  **a · b = |a| × |b| × cos(θ)**
+* Interprets whether vectors point in the **same**, **opposite**, or **orthogonal** directions
+* Reinforces geometric understanding through printed explanations
+
+### Sample Output
+
+```
+Vector 1 looks like:
+[-28.78, 3.30, -0.91, 0.87, 4.23]
+has a magnitude of 858.80
+
+Vector 2 looks like:
+[-49.88, -28.37, -9.79, -41.04, 42.98]
+has a magnitude of 6920.92
+
+The Dot product of vectors 1 and 2 is 1497.082, which means that the vectors point in a similar direction
+
+Comparing to the cosine formula:
+vector1 · vector2 = |v1| * |v2| * cos(θ)
+1497.082 = 858.7994 * 6920.9244 * 0.0003
+1497.082 = 1497.082
+
+To put it simply:
+• If θ = 0°, then cos(θ) = 1 → vectors point in the same direction  
+• If θ = 90°, then cos(θ) = 0 → vectors are perpendicular (dot product = 0)  
+• If θ = 180°, then cos(θ) = -1 → vectors point in opposite directions  
+→ The dot product combines vector sizes and the cosine of their angle.
+```
+
+### Notebook Location
+
+```
+Subjects/vector_math/dot_product_trial.ipynb
+```
+
+**screenshot:**
+
+To visually show output, you may include:
+
+```markdown
+![Dot Product Output](assets/dot_product_output_example.png)
+```
+
+---
+
+## Dot Product – Key Concepts
+
+* The dot product measures how aligned two vectors are
+* Cosine rule: **a · b = |a||b|cos(θ)**
+* Interpretation:
+
+  * Positive → same direction
+  * Zero → perpendicular
+  * Negative → opposite direction
+* Dot product scales with vector magnitudes and the cosine of the angle between them
+
+---
+
+## Dot Product – Why This Is Useful
+
+Understanding dot products is essential for both geometry and machine learning:
+
+* It tells us **how much two vectors "agree" in direction**
+* Cosine similarity (based on dot product) is used in:
+
+  * Text similarity (natural language processing)
+  * Recommender systems
+  * Image comparison and embedding alignment
+* Helps with:
+
+  * Projection of one vector onto another
+  * Understanding gradients, angles, and alignment in high-dimensional spaces
+
+---
+
 ## Repository Structure
 
 ```
 Subjects/
 └── vector_math/
-    └── vector_math.ipynb       # Vector operations visualization
+    ├── vector_math.ipynb       # Vector operations visualization
+    └── dot_product_trial.ipynb       # Dot Product Calculator
 assets/
 ├── vector_plot_example.png         # Ordered vector plot
-└── vector_plot_commutative.png     # Shuffled vector plot (commutativity)
+├── vector_plot_commutative.png     # Shuffled vector plot (commutativity)
+└── dot_product_output_example.png  # printed output screenshot for dot product
 README.md                           # This file
 ```
 
